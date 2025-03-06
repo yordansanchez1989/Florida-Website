@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Contact Us - Florida State</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Florida State</h1>
+    </header>
+    <div class="yellow-line"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home |</a></li>
+            <li><a href="miami.html">Miami |</a></li>
+            <li><a href="orlando.html">Orlando |</a></li>
+            <li><a href="tallahassee.html">Tallahassee |</a></li>
+            <li><a href="about.html">About Florida |</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
+        <section class="form-section">
+            <h2>Get in Touch</h2>
+            <form id="contactForm" class="contact-form" action="#" method="post">
+
+                <!--First Name-->
+                <div class="form-info">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+
+                <!--Last Name-->
+                <div class="form-info">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+
+                <!--Email-->
+                <div class="form-info">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!--Confirm Email-->
+                <div class="form-info">
+                    <label for="confirm-email">Confirm Email Address:</label>
+                    <input type="email" id="confirm-email" name="confirm-email" required>
+                </div>
+
+                <!--Question-->
+                <div class="form-info">
+                    <label for="question">Your Question:</label>
+                    <textarea id="question" name="question" rows="5" required></textarea>
+                </div>
+
+                <!--Submit Buttom-->
+                <div class="form-info">
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+
+            </form>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="footer-a">Home |</a></li>
+                    <li><a href="miami.html" class="footer-a">Miami |</a></li>
+                    <li><a href="orlando.html" class="footer-a">Orlando |</a></li>
+                    <li><a href="tallahassee.html" class="footer-a">Tallahassee |</a></li>
+                    <li><a href="about.html" class="footer-a">About Florida |</a></li>
+                    <li><a href="contact.html" class="footer-a">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p>&copy Yordan Sanchez Gomez | Florida State Project | <a href="contact.html">Contact Us</a></p>
+    </footer>
+    <script>
+        // Wait for the DOM to load
+        document.addEventListener("DOMContentLoaded", function () {
+          // Get the form element
+          const form = document.getElementById("contactForm");
+      
+          // Add submit event listener
+          form.addEventListener("submit", function (e) {
+            // Get email fields
+            const email = document.getElementById("email").value.trim();
+            const confirmEmail = document.getElementById("confirm-email").value.trim();
+      
+            // Check if emails match
+            if (email !== confirmEmail) {
+              // Prevent form submission
+              e.preventDefault();
+              // Show alert
+              alert("The email addresses do not match. Please check and try again.");
+            }
+          });
+        });
+      </script>
+</body>
+</html>
